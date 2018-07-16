@@ -4,7 +4,7 @@
 #include "DrawDebugHelpers.h"
 #include "Engine/EngineTypes.h"
 #include "Engine/World.h"
-
+#include "DrawDebugHelpers.h"
 
 // Sets default values
 ASpherePlayer::ASpherePlayer()
@@ -109,5 +109,8 @@ bool ASpherePlayer::LinkOtherPlayer(ASpherePlayer * _OtherP)
 void ASpherePlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	bool IsG = IsGrounded();
+	UE_LOG(LogTemp, Warning, TEXT("MyCharacter's Bool is %s"), (IsG ? TEXT("True") : TEXT("False")));
+
 }
 
